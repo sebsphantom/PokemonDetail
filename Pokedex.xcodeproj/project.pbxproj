@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		347B809D2C84231A00648E34 /* Pokemon Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 347B809C2C84231A00648E34 /* Pokemon Solid.ttf */; };
+		347B809F2C84232F00648E34 /* Pokemon Hollow.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 347B809E2C84232F00648E34 /* Pokemon Hollow.ttf */; };
 		60D55ED428581CD400AC43FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D55ED328581CD400AC43FB /* AppDelegate.swift */; };
 		60D55ED628581CD400AC43FB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D55ED528581CD400AC43FB /* SceneDelegate.swift */; };
 		60D55ED828581CD400AC43FB /* ListaPokemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D55ED728581CD400AC43FB /* ListaPokemonViewController.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		347B809C2C84231A00648E34 /* Pokemon Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pokemon Solid.ttf"; sourceTree = "<group>"; };
+		347B809E2C84232F00648E34 /* Pokemon Hollow.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pokemon Hollow.ttf"; sourceTree = "<group>"; };
 		60D55ED028581CD400AC43FB /* Pokedex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokedex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60D55ED328581CD400AC43FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60D55ED528581CD400AC43FB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +51,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		347B809B2C841E8000648E34 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				347B809E2C84232F00648E34 /* Pokemon Hollow.ttf */,
+				347B809C2C84231A00648E34 /* Pokemon Solid.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		60D55EC728581CD400AC43FB = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +79,7 @@
 		60D55ED228581CD400AC43FB /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
+				347B809B2C841E8000648E34 /* Font */,
 				60D55ED328581CD400AC43FB /* AppDelegate.swift */,
 				60D55ED528581CD400AC43FB /* SceneDelegate.swift */,
 				60D55ED728581CD400AC43FB /* ListaPokemonViewController.swift */,
@@ -140,7 +154,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				347B809D2C84231A00648E34 /* Pokemon Solid.ttf in Resources */,
 				60D55EE028581CD700AC43FB /* LaunchScreen.storyboard in Resources */,
+				347B809F2C84232F00648E34 /* Pokemon Hollow.ttf in Resources */,
 				60D55EDD28581CD700AC43FB /* Assets.xcassets in Resources */,
 				60D55EDB28581CD400AC43FB /* Main.storyboard in Resources */,
 				60D55EEE2858245C00AC43FB /* CeldaPokemonTableViewCell.xib in Resources */,
