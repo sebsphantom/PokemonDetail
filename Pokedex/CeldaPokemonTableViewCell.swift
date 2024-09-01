@@ -2,29 +2,28 @@
 //  CeldaPokemonTableViewCell.swift
 //  Pokedex
 //
-//  Created by marco rodriguez on 13/06/22.
+//  Created by Carlos Padilla and Sebastian Verastegui on 2024 August 31
 //
 
 import UIKit
 
 class CeldaPokemonTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var defensaPokemon: UILabel!
-    @IBOutlet weak var ataquePokemon: UILabel!
-    @IBOutlet weak var nombrePokemon: UILabel!
-    @IBOutlet weak var imagenPokemon: UIImageView!
+    @IBOutlet weak var defensaPokemon: UILabel! // Etiqueta para mostrar la defensa del Pokémon
+    @IBOutlet weak var ataquePokemon: UILabel! // Etiqueta para mostrar el ataque del Pokémon
+    @IBOutlet weak var nombrePokemon: UILabel! // Etiqueta para mostrar el nombre del Pokémon
+    @IBOutlet weak var imagenPokemon: UIImageView! // Imagen para mostrar el Pokémon
     
-
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        imagenPokemon.layer.cornerRadius = 15
+        imagenPokemon.layer.cornerRadius = 15 // Redondea las esquinas de la imagen del Pokémon
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+        // Mantiene la configuración de la vista para el estado seleccionado
     }
     
 }

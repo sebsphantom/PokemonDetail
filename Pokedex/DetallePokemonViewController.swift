@@ -2,7 +2,7 @@
 //  DetallePokemonViewController.swift
 //  Pokedex
 //
-//  Created by marco rodriguez on 13/06/22.
+//  Created by Sebastian Verastegui and Carlos Padilla 2024 August31
 //
 
 import UIKit
@@ -27,9 +27,9 @@ class DetallePokemonViewController: UIViewController {
 
         //Imagen mostrar
         imagenPokemon.loadFrom(URLAddres: pokemonMostrar?.imageUrl ?? "")
-        tipoPokemon.text = "Tipo : \(pokemonMostrar?.type ?? "")"
-        ataquePokemon.text = "Ataque: \(pokemonMostrar!.attack)"
-        defensaPokemon.text = "Defensa: \(pokemonMostrar!.defense)"
+        tipoPokemon.text = "Type : \(pokemonMostrar?.type ?? "")"
+        ataquePokemon.text = "Attack: \(pokemonMostrar!.attack)"
+        defensaPokemon.text = "Defense: \(pokemonMostrar!.defense)"
         descripcionPokemon.text = pokemonMostrar?.description ?? ""
         
     }

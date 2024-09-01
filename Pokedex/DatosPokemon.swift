@@ -12,7 +12,7 @@ struct Pokemon: Decodable, Identifiable {
     let attack: Int
     let defense: Int
     let description: String
-    let name: String
+    var name: String
     let imageUrl: String
     let type: String
 }
