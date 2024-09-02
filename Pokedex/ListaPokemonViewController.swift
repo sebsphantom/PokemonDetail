@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Pokedex
 //
-//  Created by marco rodriguez on 13/06/22.
+//  Made by Carlos Padilla and Sebastian Verastegui on 2924 August 31.
 //
 
 import UIKit
@@ -13,7 +13,6 @@ class ListaPokemonViewController: UIViewController {
     @IBOutlet weak var searchBarPokemon: UISearchBar!
     
     @IBOutlet weak var searchPokemonTextField: UITextField!
-    
     
     @IBOutlet weak var tablaPokemon: UITableView!
     
@@ -26,32 +25,28 @@ class ListaPokemonViewController: UIViewController {
     
     var pokemonFiltrados: [Pokemon] = []
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //registrar nueva celda
+        // Registra la celda personalizada en la tabla
         tablaPokemon.register(UINib(nibName: "CeldaPokemonTableViewCell", bundle: nil), forCellReuseIdentifier: "celda")
         
         pokemonManager.delegado = self
         
-        /// **DEPRECADA **
+        /// **DEPRECADA **: Metodo anterior de búsqueda
 //        searchBarPokemon.delegate = self
         searchPokemonTextField.delegate = self
         
         tablaPokemon.delegate = self
         tablaPokemon.dataSource = self
         
-        //Ejecutar el metodo para buscar la lista de pokemon
+        // Ejecuta la función para obtener la lista de Pokémon
         pokemonManager.verPokemon()
-        
-        
     }
 }
 
 // MARK: - SearchBar
-/// **DEPRECADA **
+/// **DEPRECADA **: Extensión del delegado de UISearchBar
 //extension ListaPokemonViewController: UISearchBarDelegate {
 //    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 //
@@ -74,6 +69,7 @@ class ListaPokemonViewController: UIViewController {
 
 extension ListaPokemonViewController: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
+        // Filtra la lista de Pokémon según el texto ingresado
         pokemonFiltrados = []
         
         if textField.text == "" {
@@ -89,7 +85,7 @@ extension ListaPokemonViewController: UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        //Ocultar el teclado
+        // Oculta el teclado cuando se presiona "return"
         textField.endEditing(true)
         return true
     }
@@ -98,6 +94,7 @@ extension ListaPokemonViewController: UITextFieldDelegate {
 // MARK: - Delegado Pokemon
 extension ListaPokemonViewController: pokemonManagerDelegado {
     func mostrarListaPokemon(lista: [Pokemon]) {
+        // Actualiza la lista de Pokémon y recarga la tabla en la interfaz principal
         pokemons = lista
         
         DispatchQueue.main.async {
@@ -105,25 +102,24 @@ extension ListaPokemonViewController: pokemonManagerDelegado {
             self.tablaPokemon.reloadData()
         }
     }
-    
-    
 }
 
 // MARK: - Tabla
 extension ListaPokemonViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // Devuelve el número de Pokémon filtrados para mostrar
         return pokemonFiltrados.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // Configura cada celda de la tabla con los datos del Pokémon
         let celda = tablaPokemon.dequeueReusableCell(withIdentifier: "celda", for: indexPath) as! CeldaPokemonTableViewCell
         
         celda.nombrePokemon.text = pokemonFiltrados[indexPath.row].name
-        celda.ataquePokemon.text = "Ataque: \(pokemonFiltrados[indexPath.row].attack)"
-        celda.defensaPokemon.text = "Defensa: \(pokemonFiltrados[indexPath.row].defense)"
+        celda.ataquePokemon.text = "Attack: \(pokemonFiltrados[indexPath.row].attack)"
+        celda.defensaPokemon.text = "Defense: \(pokemonFiltrados[indexPath.row].defense)"
         
-        
-        //celda imagen desde URL
+        // Carga la imagen del Pokémon desde una URL
         if let urlString = pokemonFiltrados[indexPath.row].imageUrl as? String {
             if let imagenURL = URL(string: urlString) {
                 DispatchQueue.global().async {
@@ -136,24 +132,24 @@ extension ListaPokemonViewController: UITableViewDelegate, UITableViewDataSource
             }
         }
         
-        
         return celda
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Guarda el Pokémon seleccionado y navega a la pantalla de detalles
         pekemonSeleccionado = pokemonFiltrados[indexPath.row]
         
         performSegue(withIdentifier: "verPokemon", sender: self)
         
-        //Deseleccionar
+        // Deselecciona la fila después de seleccionar
         tablaPokemon.deselectRow(at: indexPath, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Prepara los datos para la vista de detalles del Pokémon
         if segue.identifier == "verPokemon" {
             let verPokemon = segue.destination as! DetallePokemonViewController
             verPokemon.pokemonMostrar = pekemonSeleccionado
         }
     }
-    
 }

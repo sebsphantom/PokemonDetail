@@ -2,8 +2,9 @@
 //  CeldaPokemonTableViewCell.swift
 //  Pokedex
 //
-//  Created by marco rodriguez on 13/06/22.
+//  Made by Carlos Padilla and Sebastian Verástegui on 2024 August 31.
 //
+
 
 import UIKit
 

@@ -20,7 +20,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pikachu" translatesAutoresizingMaskIntoConstraints="NO" id="wET-zH-dAa">
                                 <rect key="frame" x="46.666666666666657" y="290.66666666666669" width="300" height="271.00000000000006"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pokédex_logo" highlightedImage="Pokédex_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Upv-pA-rxT">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pokemon" highlightedImage="Pokédex_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Upv-pA-rxT">
                                 <rect key="frame" x="3" y="142" width="387" height="140"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="0d2-2z-afl"/>
@@ -46,6 +46,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Pokemon" width="350" height="129"/>
         <image name="Pokédex_logo" width="387" height="140"/>
         <image name="pikachu" width="300" height="271"/>
         <systemColor name="systemYellowColor">
